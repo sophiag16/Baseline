@@ -25,6 +25,6 @@ public class Main {
             totalTax += list[i].totalTax;
         }
 
-        System.out.println(totalPrice+" "+totalTax);
+        System.out.println("Total price is:"+totalPrice+"\nTotal tax is:"+totalTax);
     }
 }
