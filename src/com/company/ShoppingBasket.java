@@ -9,12 +9,11 @@ public class ShoppingBasket {
     double totalPrice = 0;
     double totalTax = 0;
 
-    public ShoppingBasket(int numberOfItems){
-        this.numberOfItems = numberOfItems;
+    public ShoppingBasket(){
 
-        list[0] = new Item("book",12.49,false);
-        list[1] = new Item("music_CD",14.99,false);
-        list[2] = new Item("food",0.85,false);
+        list[0] = new Item("book",12.49,false,"book");
+        list[1] = new Item("musicCD",14.99,false,"general");
+        list[2] = new Item("chocolateBar",0.85,false,"food");
 
         calculateTotal();
 
@@ -22,12 +21,10 @@ public class ShoppingBasket {
 
     public void calculateTotal(){
         for(int i=0;i<3;i++) {
-            //System.out.println(list[i].itemName+" "+list[i].price);
             totalPrice += list[i].price;
             totalTax += list[i].totalTax;
         }
 
-        //System.out.println("Total price is:"+totalPrice+"\nTotal tax is:"+totalTax);
     }
 
     public void printReceipt(){

@@ -4,24 +4,25 @@ package com.company;
  * Created by sophiag on 24/08/15.
  */
 public class Item {
-    String itemName;
+    String itemName,type;
     double price;
     double shelfPrice;
     boolean isItImported;
     boolean isSalesTaxApplicable;
     double salesTax, importTax, totalTax;
 
-    public Item(String itemName, double price, boolean isItImported){
+    public Item(String itemName, double price, boolean isItImported, String type){
         this.itemName = itemName;
         this.shelfPrice = price;
         this.isItImported = isItImported;
+        this.type = type;
 
 
         setTaxValues();
     }
 
     private void setTaxValues(){
-        if(itemName=="medicine"||itemName=="book"||itemName=="food"){
+        if(type=="medicine"||type=="book"||type=="food"){
             salesTax = 0.0;
             isSalesTaxApplicable = false;
         }
