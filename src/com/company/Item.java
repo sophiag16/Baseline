@@ -4,14 +4,14 @@ package com.company;
  * Created by sophiag on 24/08/15.
  */
 public class Item {
-    private String itemName;
-    private int price;
-    private int shelfPrice;
-    private boolean isItImported;
-    private boolean isSalesTaxApplicable;
-    private int salesTax, importTax, totalTax;
+    String itemName;
+    double price;
+    double shelfPrice;
+    boolean isItImported;
+    boolean isSalesTaxApplicable;
+    double salesTax, importTax, totalTax;
 
-    public Item(String itemName, int price, boolean isItImported){
+    public Item(String itemName, double price, boolean isItImported){
         this.itemName = itemName;
         this.price = price;
         this.isItImported = isItImported;
