@@ -8,7 +8,7 @@ public class Main {
 
         //ShoppingBasket myBasket = new ShoppingBasket(items);
 
-        Item[] list;
+        Item[] list = new Item[3];
 
 
 
@@ -16,8 +16,15 @@ public class Main {
         list[1] = new Item("music_CD",14.99,false);
         list[2] = new Item("food",0.85,false);
 
+        int totalPrice = 0;
+        int totalTax = 0;
+
         for(int i=0;i<3;i++) {
-            System.out.println(list[i].itemName+" ");
+            System.out.println(list[i].itemName+" "+list[i].price);
+            totalPrice += list[i].price;
+            totalTax += list[i].totalTax;
         }
+
+        System.out.println(totalPrice+" "+totalTax);
     }
 }

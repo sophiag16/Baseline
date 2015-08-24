@@ -10,9 +10,9 @@ public class ShoppingBasket {
     public ShoppingBasket(int numberOfItems){
         this.numberOfItems = numberOfItems;
 
-        for(int i=0;i<numberOfItems;i++){
+        /*for(int i=0;i<numberOfItems;i++){
             itemList[i] = new Item();
-        }
+        }*/
     }
 
 }

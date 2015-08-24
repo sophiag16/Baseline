@@ -13,7 +13,7 @@ public class Item {
 
     public Item(String itemName, double price, boolean isItImported){
         this.itemName = itemName;
-        this.price = price;
+        this.shelfPrice = price;
         this.isItImported = isItImported;
 
 
@@ -21,24 +21,32 @@ public class Item {
     }
 
     private void setTaxValues(){
-        if(itemName=="medicine"||itemName=="bood"||itemName=="food"){
-            salesTax = 0;
+        if(itemName=="medicine"||itemName=="book"||itemName=="food"){
+            salesTax = 0.0;
             isSalesTaxApplicable = false;
         }
+        else{
+            isSalesTaxApplicable = true;
+        }
 
-        int taxRate;
-        if(isItImported&&isSalesTaxApplicable)
-            taxRate = 15;
-        else if(isItImported)
-            taxRate = 5;
-        else if(isSalesTaxApplicable)
-            taxRate = 10;
-        else
-            taxRate = 0;
+        double taxRate;
+        if(isItImported&&isSalesTaxApplicable) {
+            taxRate = 15.0;
+        }
+        else if(isItImported) {
+            taxRate = 5.0;
+        }
+        else if(isSalesTaxApplicable) {
+            taxRate = 10.0;
+        }
+        else {
+            taxRate = 0.0;
+        }
 
-        shelfPrice = (price/((taxRate/100)+1));
+        //shelfPrice = (price/((taxRate/100)+1));
+        totalTax = (taxRate/100.0) * shelfPrice;
 
-        totalTax = price - shelfPrice;
+        price = shelfPrice + totalTax;
 
         if(isItImported&&isSalesTaxApplicable){
             salesTax = totalTax*(2/3);
